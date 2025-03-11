@@ -21,12 +21,7 @@ Machine Learning Approach
 - Prediction Model: Linear Regression
 - Performance: R² ≈ 82%
 
-Installation & Usage
-1. Clone the repository:
-   git clone https://github.com/YOUR-USERNAME/RealEstatePricePredictor-Belgrade.git
-   cd RealEstatePricePredictor-Belgrade
-
-2. Environment Setup
+Environment Setup
    - This project was developed using Anaconda’s general virtual environment.
    - Open the project in Jupyter Notebook through Anaconda and run the code.
 
