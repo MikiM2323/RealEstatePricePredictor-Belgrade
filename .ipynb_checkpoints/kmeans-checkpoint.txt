@@ -1,0 +1,41 @@
+# # Sprovodjenje grupisanja kako bi podelili lokaciju u 4 kategorijske varijable 
+# from sklearn.cluster import KMeans
+
+# # Logaritmovanje varijable cene 
+# log_price = np.log(raw_data['Price in EUR'])
+
+# raw_data['log_price'] = log_price
+
+# # Biranje relevantnih kolona za kriterijum sprovodjenja grupisanja
+# features = raw_data[['Size', 'Price in EUR', 'Rooms']]
+
+# # Odabir broja klastera (optimal_k) korišćenjem Elbow metode
+# inertia = []
+# for k in range(1, 11):
+#     kmeans = KMeans(n_clusters=k, random_state=42)
+#     kmeans.fit(features)
+#     inertia.append(kmeans.inertia_)
+
+# #Elbow metoda - Prikaz grafika
+# plt.figure(figsize=(8, 6))
+# plt.plot(range(1, 11), inertia, marker='o')
+# plt.title("Elbow Metoda za Odabir Broja Klastera")
+# plt.xlabel("Broj Klastera")
+# plt.ylabel("Inercija")
+# plt.show()
+
+# optimal_k = 30 # Kako vidimo na grafiku za elbow metodu 
+
+# # Kmeans grupisanje (clustering)
+# kmeans = KMeans(n_clusters=optimal_k, random_state=42)  
+# raw_data['Cluster'] = kmeans.fit_predict(features)
+# raw_data
+
+# # Group locations by their assigned cluster
+# clusters = raw_data.groupby("Cluster")["Location"].unique()
+
+# # Display all locations for each cluster
+# for cluster, locations in clusters.items():
+#     print(f"Cluster {cluster}:")
+#     print(", ".join(locations))  # Print locations in a readable format
+#     print("-" * 50)
